@@ -1,0 +1,21 @@
+.input-underline {
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  color: #FFF;
+  border-radius: 0;
+}
+.input-underline::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.input-underline::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.input-underline::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.input-underline:focus {
+  border-bottom: 2px solid #ffffff;
+  box-shadow: none;
+}

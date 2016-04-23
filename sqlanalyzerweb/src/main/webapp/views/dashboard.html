@@ -1,0 +1,22 @@
+<div class="ui-base">
+	<div id="app-container">
+		<nav class="navbar navbar-inverse navbar-fixed-top striped-bg" id="top-navbar">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="sidenav-toggle" href="javascript:;" ng-click="showMenu();"><span class="brandbar"><i class="fa fa-bars hidd"></i></a></span> <a class="navbar-brand" ui-sref="home"><i class="fa fa-paper-plane"></i>&nbsp;SQL Analyzer</a>
+					<div class="solution">
+						&nbsp;</i>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div id="body-container" class="menu-hidden">
+			<div class="main-view">
+				<div ncy-breadcrumb></div>
+				<div ui-view></div>
+				<footer></footer>
+			</div>
+		</div>
+	</div>
+</div>

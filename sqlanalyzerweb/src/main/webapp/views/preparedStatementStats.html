@@ -1,0 +1,63 @@
+<div class="row">
+	<div class="col-sm-12">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: inline">SQL Stats</h3>
+				<div class="panel-control pull-right">
+					<a href="#/dashboard/main" class="panelButton"><i class="fa fa-compress"></i></a>
+				</div>
+			</div>
+			<div class="panel-body">
+				<table style="height: 50%" st-table="displayedtableCollection" st-safe-src="preparedStatementStats" class="scroll-table table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th style="width: 3%" st-sort="tableName">SNo</th>
+							<th style="width: 7%; text-align: center;">Type</th>
+							<th style="width: 20%; text-align: center;">Tables</th>
+							<th style="width: 50%; text-align: center;">SQL</th>
+							<th style="width: 5%; text-align: center;">Count</th>
+							<th style="width: 5%; text-align: center;">Time taken</th>
+							<th style="width: 5%; text-align: center;">Rows Read</th>
+							<th style="width: 5%; text-align: center;">Reading Time</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="row in displayedtableCollection">
+							<td style="width: 3%" st-sort="tableName">#{{$index + 1}}</td>
+							<td style="width: 7.2%; text-align: center;">{{row.sqlType}}</td>
+							<td style="width: 20.2%; text-align: center;"><span style="width: 100%; word-wrap: break-word; display: inline-block;">{{row.tableNames}}</span></td>
+							<td style="width: 50.6%; text-align: left;">
+								<div ng-show="row.showSQL">
+									<div style="width: 100%; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; display: block">{{row.sql}}</div>
+									<div style="display: block; text-align: left;">
+										<i ng-click="expandFormatSQL(row);" class="fa fa-long-arrow-down" style="cursor: pointer;"></i>
+										&nbsp;&nbsp;
+										<i ng-copy="row.formattedSQL" class="fa fa-clipboard" style="cursor: pointer;"></i>
+									</div>
+								</div>
+								<div ng-hide="row.showSQL">
+									<div style="display: block; text-align: left;">
+										<i ng-click="collapseFormatSQL(row);" class="fa fa-long-arrow-up" style="cursor: pointer;"></i>
+										&nbsp;&nbsp;
+										<i ng-copy="row.formattedSQL" class="fa fa-clipboard" style="cursor: pointer;"></i>
+									</div>
+									<div style="width: 100%; display: block">
+										<pre class="snippet">
+											<code ng-bind-html="row.formattedSQL_HTML" class="hjls sql"></code>
+										</pre>
+									</div>
+
+								</div>
+							</td>
+							<td style="width: 5%; text-align: right;">{{row.count}}</td>
+							<td style="width: 5.1%; text-align: right;">{{row.timetaken}}</td>
+							<td style="width: 5.1%; text-align: right;">{{row.rowsRead}}</td>
+							<td style="width: 3.8%; text-align: right;">{{row.rowsReadTimeTaken}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</div>
