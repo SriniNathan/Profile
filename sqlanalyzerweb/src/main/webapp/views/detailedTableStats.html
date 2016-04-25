@@ -1,50 +1,56 @@
-<div class="row">
-	<div class="col-sm-12">
-		<div class="panel panel-primary">
+<div class="row full">
+	<div class="col-sm-12 full">
+		<div class="panel panel-primary full">
 			<div class="panel-heading">
 				<h3 class="panel-title" style="display: inline">Detailed Table Stats</h3>
 				<div class="panel-control pull-right">
 					<a href="#/dashboard/main" class="panelButton"><i class="fa fa-compress"></i></a>
 				</div>
 			</div>
-			<div class="panel-body">
-				<table style="height:100%" st-table="displayedtableCollection" st-safe-src="detailedTableStatsArray" class="scroll-table table table-striped table-bordered">
+			<div class="panel-body full">
+				<table style="height:100%" st-table="displayedtableCollection" st-safe-src="detailedTableStatsArray" class="scroll-table table table-striped table-bordered full">
 					<thead>
 						<tr>
 							<th style="width:25%" st-sort="tableName">Table Name</th>
-							<th style="width:15%;text-align: center;" colspan="2" st-sort="selecttimetaken/selectcount">Select</th>
-							<th style="width:15%;text-align: center;" colspan="2" st-sort="inserttimetaken/insertcount">Insert</th>
-							<th style="width:15%;text-align: center;" colspan="2" st-sort="udpatetimetaken/updatecount">Update</th>
-							<th style="width:15%;text-align: center;" colspan="2" st-sort="deletetimetaken/deletecount">Delete</th>
-							<th style="width:15%;text-align: center;" colspan="2" st-sort="totaltimetaken/totalcount" >Total</th>
+							<th style="width:25%;text-align: center;" colspan="2" st-sort="selecttimetaken/selectcount">Select</th>
+							<th style="width:12.5%;text-align: center;" colspan="2" st-sort="inserttimetaken/insertcount">Insert</th>
+							<th style="width:12.5%;text-align: center;" colspan="2" st-sort="udpatetimetaken/updatecount">Update</th>
+							<th style="width:12.5%;text-align: center;" colspan="2" st-sort="deletetimetaken/deletecount">Delete</th>
+							<th style="width:12.5%;text-align: center;" colspan="2" st-sort="totaltimetaken/totalcount" >Total</th>
+							<th style="width:10px;"></th>
 						</tr>
 						<tr>
 							<th style="width:25%"><input st-search="tableName" placeholder="search for table" class="input-sm form-control" type="search" /></th>
-							<th style="width:7.5%;text-align: right;" st-sort="selectcount">Count</th>
-							<th style="width:7.5%;text-align: right;" st-sort="selecttimetaken">Time(ms)</th>
-							<th style="width:7.5%;text-align: right;" st-sort="insertcount">Count</th>
-							<th style="width:7.5%;text-align: right;" st-sort="inserttimetaken">Time(ms)</th>
-							<th style="width:7.5%;text-align: right;" st-sort="updatecount">Count</th>
-							<th style="width:7.5%;text-align: right;" st-sort="updatetimetaken">Time(ms)</th>
-							<th style="width:7.5%;text-align: right;" st-sort="deletecount">Count</th>
-							<th style="width:7.5%;text-align: right;" st-sort="deletetimetaken">Time(ms)</th>
-							<th style="width:7.5%;text-align: right;" st-sort="totalcount">Count</th>
-							<th style="width:7.5%;text-align: right;" st-sort="totaltimetaken">Time(ms)</th>
+							<th style="width:6.25%;text-align: right;" st-sort="selectcount">Count</th>
+							<th style="width:6.25%;text-align: right;" st-sort="selecttimetaken">Time(ms)</th>
+							<th style="width:6.25%;text-align: right;" st-sort="rowsReadCount">Rows Read</th>
+							<th style="width:6.25%;text-align: right;" st-sort="rowsReadTimeTaken">Rows Read Time(ms)</th>
+							<th style="width:6.25%;text-align: right;" st-sort="insertcount">Count</th>
+							<th style="width:6.25%;text-align: right;" st-sort="inserttimetaken">Time(ms)</th>
+							<th style="width:6.25%;text-align: right;" st-sort="updatecount">Count</th>
+							<th style="width:6.25%;text-align: right;" st-sort="updatetimetaken">Time(ms)</th>
+							<th style="width:6.25%;text-align: right;" st-sort="deletecount">Count</th>
+							<th style="width:6.25%;text-align: right;" st-sort="deletetimetaken">Time(ms)</th>
+							<th style="width:6.25%;text-align: right;" st-sort="totalcount">Count</th>
+							<th style="width:6.25%;text-align: right;" st-sort="totaltimetaken">Time(ms)</th>
+							<th style="width:10px;"></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr ng-repeat="row in displayedtableCollection">
-							<td style="width:25.25%" >{{row.tableName}}</td>
-							<td style="width:7.58%;text-align: right;" ><a ng-href="#/dashboard/ps/table/{{row.tableName}}">{{row.selectcount}}</a></td>
-							<td style="width:7.58%;text-align: right;" >{{row.selecttimetaken}}</td>
-							<td style="width:7.58%;text-align: right;" ><a ng-href="#/dashboard/ps/table/{{row.tableName}}">{{row.insertcount}}</a></td>
-							<td style="width:7.58%;text-align: right;" >{{row.inserttimetaken}}</td>
-							<td style="width:7.58%;text-align: right;" ><a ng-href="#/dashboard/ps/table/{{row.tableName}}">{{row.updatecount}}</a></td>
-							<td style="width:7.58%;text-align: right;" >{{row.updatetimetaken}}</td>
-							<td style="width:7.58%;text-align: right;" ><a ng-href="#/dashboard/ps/table/{{row.tableName}}">{{row.deletecount}}</a></td>
-							<td style="width:7.58%;text-align: right;" >{{row.deletetimetaken}}</td>
-							<td style="width:7.58%;text-align: right;" ><a ng-href="#/dashboard/ps/table/{{row.tableName}}">{{row.totalcount}}</a></td>
-							<td style="width:6.53%;text-align: right;" >{{row.totaltimetaken}}</td>
+							<td style="width:25%" >{{row.tableName}}</td>
+							<td style="width:6.25%;text-align: right;" ><a ng-href="#/dashboard/ps/table/{{row.tableName}}">{{row.selectcount}}</a></td>
+							<td style="width:6.25%;text-align: right;" >{{row.selecttimetaken}}</td>
+							<td style="width:6.25%;text-align: right;" >{{row.rowsReadCount}}</td>
+							<td style="width:6.25%;text-align: right;" >{{row.rowsReadTimeTaken}}</td>
+							<td style="width:6.25%;text-align: right;" ><a ng-href="#/dashboard/ps/table/{{row.tableName}}">{{row.insertcount}}</a></td>
+							<td style="width:6.25%;text-align: right;" >{{row.inserttimetaken}}</td>
+							<td style="width:6.25%;text-align: right;" ><a ng-href="#/dashboard/ps/table/{{row.tableName}}">{{row.updatecount}}</a></td>
+							<td style="width:6.25%;text-align: right;" >{{row.updatetimetaken}}</td>
+							<td style="width:6.25%;text-align: right;" ><a ng-href="#/dashboard/ps/table/{{row.tableName}}">{{row.deletecount}}</a></td>
+							<td style="width:6.25%;text-align: right;" >{{row.deletetimetaken}}</td>
+							<td style="width:6.25%;text-align: right;" ><a ng-href="#/dashboard/ps/table/{{row.tableName}}">{{row.totalcount}}</a></td>
+							<td style="width:6.25%;text-align: right;" >{{row.totaltimetaken}}</td>
 						</tr>
 					</tbody>
 				</table>
